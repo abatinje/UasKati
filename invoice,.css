@@ -1,0 +1,67 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 0; /* Mengurangi jarak antara judul dan konten */
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+}
+
+.invoice-section {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.invoice-section h2, .invoice-section h3 {
+    color: #68f331; /* Warna biru sebagai highlight */
+}
+
+.invoice-section strong {
+    display: inline-block;
+    width: 120px; /* Atur lebar label agar sejajar */
+}
+
+/* Table Styling (Optional) */
+/* Jika ingin menggunakan tabel untuk rincian produk */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; /* Tempatkan footer di bagian bawah layar */
+    bottom: 0;
+    width: 100%;
+}

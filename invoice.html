@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Pemesanan</title>
+    <link rel="stylesheet" href="invoice,.css">
+</head>
+<body>
+    <header>
+        <h1>Invoice Pemesanan</h1>
+    </header>
+
+    <main>
+        <section class="invoice-section">
+            <h2>Detail Pemesanan</h2>
+            <p><strong>Nama:</strong> <span id="invoiceName"></span></p>
+            <p><strong>Email:</strong> <span id="invoiceEmail"></span></p>
+            <p><strong>Alamat:</strong> <span id="invoiceAddress"></span></p>
+
+            <h3>Rincian Produk</h3>
+            <p><strong>Produk:</strong> <span id="invoiceProduct"></span></p>
+            <p><strong>Total:</strong> <span id="invoiceTotal"></span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Penjualan Sepatu</p>
+    </footer>
+    <script>
+        function getQueryParameters(url) {
+    const urlParams = new URLSearchParams(url);
+    const params = {};
+
+    for (const [key, value] of urlParams.entries()) {
+        params[key] = value;
+    }
+    return params;
+}
+
+const data = getQueryParameters(window.location.href);
+
+document.getElementById('invoiceName').innerText = data.nama || '-';
+document.getElementById('invoiceEmail').innerText = data.email || '-';
+document.getElementById('invoiceAddress').innerText = data.alamat || '-';
+
+const productMap = {
+    1: { name: 'Yankees Black', price: 'Rp100.000' },
+    2: { name: 'Yankees White', price: 'Rp200.000' },
+    3: { name: 'Yankees Kece', price: 'Rp300.000' },
+    4: { name: 'Yankees Pink', price: 'Rp400.000' },
+    5: { name: 'Yankees Snow', price: 'Rp500.000' },
+    // ... produk lainnya
+};
+
+// Konversi ID produk menjadi angka
+const productId = parseInt(data.produk, 10); 
+
+const selectedProduct = productMap[productId];
+if (selectedProduct) {
+    document.getElementById('invoiceProduct').innerText = selectedProduct.name;
+    document.getElementById('invoiceTotal').innerText = selectedProduct.price;
+} else {
+    document.getElementById('invoiceProduct').innerText = 'Produk Tidak Ditemukan';
+    document.getElementById('invoiceTotal').innerText = '-';
+}
+
+    </script>
+</body>
+</html>
+
